@@ -18,6 +18,6 @@ Personne.getAll = (result) => {
         result(null, res);
     });
 };
-//test modification git
+//test modification git autre
 
 module.exports = Personne;
