@@ -7,7 +7,6 @@ const Personne = function (personne) {
 
 Personne.getAll = (result) => {
     let query = "SELECT * FROM personne"
-
     sql.query(query, (err, res) => {
         if (err) {
             console.log("error: ", err);
