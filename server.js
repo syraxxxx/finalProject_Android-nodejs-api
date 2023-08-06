@@ -18,8 +18,21 @@ app.use(express.urlencoded({ extended: true })); /* bodyParser.urlencoded() is d
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to NodeJS application Test" });
+  res.json({ message: "Welcome to NodeJS application" });
 });
+
+app.get('/test-connection', async (req, res) => {
+  try {
+    // Replace 'your_test_query' with your actual test query or method
+    // For example, if you are using MySQL:
+    const result = await pool.query('SELECT 1');
+    res.status(200).json({ message: 'Database connection successful' });
+  } catch (error) {
+    console.error('Error connecting to the database:', error);
+    res.status(500).json({ error: 'Database connection failed' });
+  }
+});
+
 
 // require("./app/routes/tutorial.routes.js")(app);
 require("./app/routes/site.routes.js")(app);
