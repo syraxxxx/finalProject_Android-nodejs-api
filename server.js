@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const pool = require("./db.js");
+const pool = require("./models/db.js");
 
 var corsOptions = {
   origin: "http://localhost:8081"
