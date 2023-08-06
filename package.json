@@ -4,7 +4,7 @@
   "description": "Node JS Api for android client final project",
   "main": "server.js",
   "scripts": {
-    "start": "npm run build && node server.js",
+    "start": "node server.js",
     "dev": "npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
