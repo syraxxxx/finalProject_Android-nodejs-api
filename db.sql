@@ -55,9 +55,6 @@ create table post
 insert into user values (null, 'Jean', 'Randria', 'jean@gmail.com', 'mdp', 'Andavamamba');
 
 insert into region values (null, 'Analamanga');
-
 insert into site values (null, 'Rova Manjakamiadana', 'Description avec des textes et des textes', 'lien_image', 'lien_video', 1);
-
 insert into event values (null, 'Festival des baleines', 'Description avec des textes et des textes', '2023-08-14');
-
 insert into post values(null,'Mlay kely le baleine','image_url','video_url','2023-08-14 18:12:00',1);
