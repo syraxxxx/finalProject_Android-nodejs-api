@@ -1,4 +1,4 @@
-const Region = require("../models/Region.model.js");
+const Region = require("../models/region.model.js");
 
 exports.findAll = (req, res) => {
     Region.getAll((err, data) => {

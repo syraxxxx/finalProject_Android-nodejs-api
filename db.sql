@@ -1,8 +1,6 @@
-create
-database site_mada;
+create database site_mada;
 
-    use
-site_mada;
+use site_mada;
 
 create table user
 (
@@ -54,8 +52,7 @@ create table post
     foreign key (idUser) references user (id)
 );
 
-insert into user
-values (null, 'Jean', 'Randria', 'user@gmail.com', 'mdp', 'Andavamamba');
+insert into user values (null, 'Jean', 'Randria', 'jean@gmail.com', 'mdp', 'Andavamamba');
 
 -- insert into region values (null, 'Analamanga');
 INSERT INTO province VALUES (null, 'Antananarivo');

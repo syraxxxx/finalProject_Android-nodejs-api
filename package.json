@@ -4,6 +4,8 @@
   "description": "Node JS Api for android client final project",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,6 +17,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "mysql": "^2.18.1"
+    "mysql2": "^3.6.0"
   }
 }

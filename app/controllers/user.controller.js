@@ -48,7 +48,7 @@ exports.login = (req, res) => {
                 });
             } else {
                 res.status(500).send({
-                    message: "Error retrieving Tutorial with id " + req.params.id
+                    message: "Internal Server Error " + req.params.id
                 });
             }
         } else res.send(data);

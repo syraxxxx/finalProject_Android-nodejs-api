@@ -1,4 +1,4 @@
-const Event = require("../models/Event.model.js");
+const Event = require("../models/event.model.js");
 
 exports.findAll = (req, res) => {
     Event.getAll((err, data) => {
