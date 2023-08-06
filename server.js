@@ -1,30 +1,22 @@
 const express = require("express");
-// const bodyParser = require("body-parser"); /* deprecated */
 const cors = require("cors");
-
 const app = express();
+const pool = require("./db.js");
 
 var corsOptions = {
   origin: "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); 
 
-// parse requests of content-type - application/json
-app.use(express.json()); /* bodyParser.json() is deprecated */
-
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true })); /* bodyParser.urlencoded() is deprecated */
-
-// simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to NodeJS application" });
 });
 
 app.get('/test-connection', async (req, res) => {
   try {
-    // Replace 'your_test_query' with your actual test query or method
-    // For example, if you are using MySQL:
     const result = await pool.query('SELECT 1');
     res.status(200).json({ message: 'Database connection successful' });
   } catch (error) {
@@ -33,8 +25,6 @@ app.get('/test-connection', async (req, res) => {
   }
 });
 
-
-// require("./app/routes/tutorial.routes.js")(app);
 require("./app/routes/site.routes.js")(app);
 require("./app/routes/user.routes.js")(app);
 require("./app/routes/region.routes.js")(app);
