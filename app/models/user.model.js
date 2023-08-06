@@ -11,11 +11,9 @@ const User = function (user) {
 User.create = (newUser, result) => {
     sql.query("INSERT INTO user SET ?", newUser, (err, res) => {
         if (err) {
-            console.log("error: ", err);
             result(err, null);
             return;
         }
-        console.log("created newUser: ", {id: res.insertId, ...newUser});
         result(null, {id: res.insertId, ...newUser});
     });
 };
@@ -25,12 +23,10 @@ User.findById = (id, result) => {
                FROM user
                WHERE id = ${id}`, (err, res) => {
         if (err) {
-            console.log("error: ", err);
             result(err, null);
             return;
         }
         if (res.length) {
-            console.log("found user: ", res[0]);
             result(null, res[0]);
             return;
         }
@@ -42,11 +38,9 @@ User.getAll = (result) => {
     let query = "SELECT * FROM user"
     sql.query(query, (err, res) => {
         if (err) {
-            console.log("error: ", err);
             result(null, err);
             return;
         }
-        console.log("user : ", res);
         result(null, res);
     });
 };
@@ -56,12 +50,10 @@ User.login = (email,mdp, result) => {
                FROM user
                WHERE mail = '${email}' and mdp = '${mdp}' `, (err, res) => {
         if (err) {
-            console.log("error: ", err);
             result(err, null);
             return;
         }
         if (res.length) {
-            console.log("found user: ", res[0]);
             result(null, res[0]);
             return;
         }
