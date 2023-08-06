@@ -15,16 +15,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to NodeJS application" });
 });
 
-app.get('/test-connection', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT 1');
-    res.status(200).json({ message: 'Database connection successful' });
-  } catch (error) {
-    console.error('Error connecting to the database:', error);
-    res.status(500).json({ error: 'Database connection failed' });
-  }
-});
-
 require("./app/routes/site.routes.js")(app);
 require("./app/routes/user.routes.js")(app);
 require("./app/routes/region.routes.js")(app);
