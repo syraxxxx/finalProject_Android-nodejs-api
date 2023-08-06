@@ -1,4 +1,4 @@
-const Site = require("../models/Site.model.js");
+const Site = require("../models/site.model.js");
 
 exports.findAll = (req, res) => {
     Site.getAll((err, data) => {
